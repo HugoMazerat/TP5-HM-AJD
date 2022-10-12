@@ -20,7 +20,7 @@ void insere(int sa, int sb, int pds, int G[MAX][MAX])
             }
             if(G[i][j] == 0 && i != j)//Si 2 sommets ne sont pas adjacent, la distance est consideree comme infini
             {
-                G[i][j] = INFINITY;
+                G[i][j] = 0;
             }
             if(i == j)//Si on se positionne sur un sommet precis, la distance qui le separe de lui meme est de 0
             {

@@ -11,12 +11,13 @@
 #define INFINITY 9999//Permet d'empecher le programme de passer par des chemins interdits.
 #define TAILLEMAX 90//Permet de créer un tableau
 
+
 typedef struct arc {
     int u, v, w;
 } arc;
 
 typedef struct tabArc {
-    arc data[MAX];
+    arc data[16];
     int n;
 } tabArc;
 

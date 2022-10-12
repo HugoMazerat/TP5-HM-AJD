@@ -3,15 +3,18 @@
 //
 #include "header.h"
 
-void tri(tabArc listeArc) {
+tabArc tri(tabArc listeArc) {
     int i, j;
     arc temp;
 
-    for (i = 1; i < listeArc.n; i++)
-        for (j = 0; j < listeArc.n - 1; j++)
-            if (listeArc.data[j].w > listeArc.data[j + 1].w) {
-                temp = listeArc.data[j];
-                listeArc.data[j] = listeArc.data[j + 1];
-                listeArc.data[j + 1] = temp;
+    for (i = 1; i < listeArc.n; i++){
+         for (j = 0; j < listeArc.n - 1; j++) {
+             if (listeArc.data[j].w > listeArc.data[j + 1].w) {
+                 temp = listeArc.data[j];
+                 listeArc.data[j] = listeArc.data[j + 1];
+                 listeArc.data[j + 1] = temp;
             }
+        }
+    }
+    return listeArc;
 }

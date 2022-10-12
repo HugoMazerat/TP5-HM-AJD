@@ -4,10 +4,9 @@ int main( )
 {
     ///DECLARATION DES VARIABLES
     int g[MAX][MAX];
-    int n = 9;
     char* adr = "C:/Users/mazer/Desktop/ING2/theorieDesGraphes/TP5/graphe.txt";
     tabArc listeArc;
-    tabArc spanlist;
+    tabArc arbreCouvrant;
     ///INITIALISATION MATRICE D'ADJACENCE
     for(int i = 0; i < MAX; i++)
     {
@@ -19,8 +18,8 @@ int main( )
 
     ///DEBUT DE MON MAIN
 
-    kruskal(g, adr, listeArc, spanlist, n);
-    print();
+    kruskal(g, adr, listeArc, arbreCouvrant);
+    //print(arbreCouvrant);
 
 
 }
