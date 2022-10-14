@@ -19,7 +19,7 @@ int main( )
     ///DEBUT DE MON MAIN
 
     kruskal(g, adr, listeArc, arbreCouvrant);
-    //print(arbreCouvrant);
+    //Je me suis aide du site https://www.programiz.com/dsa/kruskal-algorithm pour coder le programme.
 
 
 }
