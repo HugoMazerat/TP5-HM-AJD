@@ -4,25 +4,25 @@
 
 #include "header.h"
 
-void kruskal(int G[MAX][MAX], char* adr, tabArc listeArc, tabArc arbreCouvrant)
+void kruskal(int** G, char* adr, tabArc listeArc, tabArc arbreCouvrant, int max)
 {
     int ppArbre = INFINITY;
     int s0, s1;
     int j,i;
 
-    litFichier(adr, G);
-    for(i=0; i<MAX; i++)
+    litFichier(adr, G, max);
+    for(i=0; i<max; i++)
     {
-        for(j = 0; j<MAX; j++)
+        for(j = 0; j<max; j++)
         {
             printf("%d ", G[i][j]);
         }
         printf("\n");
     }
 
-    for(i=0;i<MAX;i++)
+    for(i=0;i<max;i++)
     {
-        for(j=0;j<MAX;j++)
+        for(j=0;j<max;j++)
         {
             if(G[i][j] != 0)
             {
@@ -41,7 +41,7 @@ void kruskal(int G[MAX][MAX], char* adr, tabArc listeArc, tabArc arbreCouvrant)
     int belongs[TAILLEMAX], cno1, cno2;
     listeArc.n = 0;
 
-    for (i = 1; i < 9; i++) {
+    for (i = 1; i < max; i++) {
         for (j = 0; j < i; j++) {
             if (G[i][j] != 0) {
                 listeArc.data[listeArc.n].u = i;
@@ -61,13 +61,13 @@ void kruskal(int G[MAX][MAX], char* adr, tabArc listeArc, tabArc arbreCouvrant)
     listeArc = tri(listeArc);
 
     printf("\n\n affichage apres tri : \n");
-    for (i = 0; i < MAX; i++) {
+    for (i = 0; i < listeArc.n; i++) {
         printf("%d ", listeArc.data[i].u);
         printf("%d ", listeArc.data[i].v);
         printf("%d\n", listeArc.data[i].w);
     }
 
-    for (i = 0; i < MAX; i++) {
+    for (i = 0; i < listeArc.n; i++) {
         belongs[i] = i;
     }
 
@@ -80,7 +80,7 @@ void kruskal(int G[MAX][MAX], char* adr, tabArc listeArc, tabArc arbreCouvrant)
         if (cno1 != cno2) {
             arbreCouvrant.data[arbreCouvrant.n] = listeArc.data[i];
             arbreCouvrant.n = arbreCouvrant.n + 1;
-            attache(belongs, cno1, cno2);
+            attache(belongs, cno1, cno2, max);
         }
     }
     print(arbreCouvrant);

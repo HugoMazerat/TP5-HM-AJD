@@ -7,9 +7,9 @@
 
 //Les differents define
 
-#define MAX 9//A faire varier en fonction du nombre de sommets que l'on traite.
+//#define MAX 9//A faire varier en fonction du nombre de sommets que l'on traite.
 #define INFINITY 9999//Permet d'empecher le programme de passer par des chemins interdits.
-#define TAILLEMAX 90//Permet de créer un tableau
+#define TAILLEMAX 1000//Permet de créer un tableau
 
 
 typedef struct arc {
@@ -17,7 +17,7 @@ typedef struct arc {
 } arc;
 
 typedef struct tabArc {
-    arc data[16];
+    arc data[17];
     int n;
 } tabArc;
 

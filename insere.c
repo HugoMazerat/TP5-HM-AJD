@@ -4,11 +4,11 @@
 
 #include "header.h"
 
-void insere(int sa, int sb, int pds, int G[MAX][MAX])
+void insere(int sa, int sb, int pds, int** G, int max)
 {
-    for(int i = 0; i < MAX; i++)//On parcours la matrice d'adjacence
+    for(int i = 0; i < max; i++)//On parcours la matrice d'adjacence
     {
-        for(int j = 0; j < MAX; j++)
+        for(int j = 0; j < max; j++)
         {
             if(i == sa && j == sb)//Lorsque l'on arrive a une case correspondant a 2 sommet adjacents
             {

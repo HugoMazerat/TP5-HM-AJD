@@ -4,7 +4,7 @@
 
 #include "header.h"
 
-void litFichier(char *adr, int G[MAX][MAX]){
+void litFichier(char *adr, int** G, int max){
     FILE *f;
     int sa,sb,pds,nbArcs;//sa = sommet a, sb = sommet b, pds = poids, nbArcs.
     f=fopen(adr,"r");//adr = nom du fichier
@@ -16,10 +16,10 @@ void litFichier(char *adr, int G[MAX][MAX]){
 
 
     fscanf(f,"%d",&nbArcs);//>>Lit le nbm d'arcs contenus dans le graphe
-    nbArcs = 16;
+    nbArcs = 17;
     while (nbArcs){
         fscanf(f,"%d %d %d",&sa,&sb,&pds);//Lit les differentes adjacences avec le poids de chacun des arcs
-        insere(sa,sb,pds, G); //Insere chaque donnee recuperee dans la matrice d'adjacence.
+        insere(sa,sb,pds, G, max); //Insere chaque donnee recuperee dans la matrice d'adjacence.
         nbArcs--;
     }
     fclose(f);//Fermeture du fichier
